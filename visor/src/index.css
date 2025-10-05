@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+	--primary: #146b95;
+	--secondary: #feffff;
+	--primary-dark: #0f5578;
+	--primary-light: #1a7db3;
+}
+
+/* Ensure root and body take full height so map can fill the screen */
+html, body, #root {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Leaflet default container styles are handled by the imported leaflet.css,
+	 but ensure our map element fills its parent */
+#map {
+	height: 100%;
+	width: 100%;
+}

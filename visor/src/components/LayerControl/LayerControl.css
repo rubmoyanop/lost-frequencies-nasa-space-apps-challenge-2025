@@ -1,0 +1,210 @@
+/* Styles for the LayerControl component */
+
+.layer-control {
+  position: absolute;
+  background: rgba(254, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(20, 107, 149, 0.15);
+  border: 1px solid rgba(20, 107, 149, 0.2);
+  min-width: 280px;
+  max-width: 320px;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.layer-control-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(20, 107, 149, 0.15);
+  background: rgba(20, 107, 149, 0.05);
+  border-radius: 8px 8px 0 0;
+}
+
+.layer-control-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #146b95;
+}
+
+.layer-control-collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #146b95;
+  font-size: 12px;
+  transition: color 0.2s;
+  opacity: 0.7;
+}
+
+.layer-control-collapse-btn:hover {
+  opacity: 1;
+}
+
+.layer-control-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(20, 107, 149, 0.1);
+}
+
+.layer-control-action-btn {
+  flex: 1;
+  padding: 6px 12px;
+  background: rgba(20, 107, 149, 0.08);
+  border: 1px solid rgba(20, 107, 149, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  color: #146b95;
+  transition: all 0.2s;
+}
+
+.layer-control-action-btn:hover:not(:disabled) {
+  background: rgba(20, 107, 149, 0.15);
+  border-color: rgba(20, 107, 149, 0.3);
+}
+
+.layer-control-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.layer-control-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.layer-control-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.layer-control-list::-webkit-scrollbar-track {
+  background: rgba(20, 107, 149, 0.05);
+  border-radius: 3px;
+}
+
+.layer-control-list::-webkit-scrollbar-thumb {
+  background: rgba(20, 107, 149, 0.3);
+  border-radius: 3px;
+}
+
+.layer-control-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(20, 107, 149, 0.5);
+}
+
+.layer-control-item {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(20, 107, 149, 0.08);
+  transition: background-color 0.2s;
+}
+
+.layer-control-item:last-child {
+  border-bottom: none;
+}
+
+.layer-control-item:hover {
+  background-color: rgba(20, 107, 149, 0.03);
+}
+
+.layer-control-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+}
+
+.layer-control-checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #146b95;
+}
+
+.layer-control-name {
+  flex: 1;
+  font-size: 14px;
+  color: #1f2937;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.layer-control-icon {
+  font-size: 16px;
+}
+
+.layer-control-description {
+  margin: 4px 0 0 24px;
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.layer-control-type {
+  display: inline-block;
+  margin-left: 24px;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: rgba(20, 107, 149, 0.1);
+  color: #146b95;
+  border-radius: 3px;
+  margin-top: 4px;
+}
+
+.layer-control-opacity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.layer-control-opacity label {
+  font-size: 12px;
+  color: #1f2937;
+  min-width: 70px;
+}
+
+.layer-control-opacity input[type="range"] {
+  flex: 1;
+  accent-color: #146b95;
+}
+
+.layer-control-empty {
+  padding: 20px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Position adjustments when used with header */
+.layer-control.top-4 {
+  top: 76px !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .layer-control {
+    min-width: 260px;
+    max-width: calc(100vw - 32px);
+  }
+  
+  .layer-control-list {
+    max-height: 300px;
+  }
+  
+  .layer-control.top-4 {
+    top: 72px !important;
+  }
+}
